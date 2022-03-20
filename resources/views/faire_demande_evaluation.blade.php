@@ -148,31 +148,43 @@
                                             <div>
                                                 <div class="text-center p-5">
                                                     <div class="text-center">                   
-                                                    <form data-bs-hover-animate="pulse" method="post">
+                                                    <form data-bs-hover-animate="pulse" method="POST" >
                                                             <h2 class="text-center" data-aos="fade-down" data-aos-duration="600" data-aos-delay="400" style="font-size: 29px;"><strong>Demande d'évaluation</strong></h2>
                                                     
                                                             <div class="form-group">
                                                                 <div class="form-row">
                                                                     <div class="col" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600">
                                                                         <label style="font-weight: normal;">Type d'évaluation</label>
-                                                                        <select class="form-control" name="evaluationType">
+                                                                        <select class="form-control" name="evaluationType" required="required">
                                                                             <optgroup label="Type d'évaluation">
-                                                                                <?php
-                                                                                
-                                                                                    echo "option value";
-                                                                                ?>
+                                                                            @foreach($eva_type as $all_eva_types)
+                                                                           
+
+                                                                           <option>
+                                                                               {!!$all_eva_types->appelation!!}
+                                                                        
+                                                                           </option>
+                                                                           @endforeach
+
                                                                             </optgroup>
                                                                         </select>
                                                                     </div>
-                                                                    <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600">
+                                                                    <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600" V>
                                                                         <label style="font-weight: normal;">UE concerné</label>
                                                                         <select class="form-control" name="ue">
                                                                             <optgroup label="UE Concerné">
-                                                                            <?php
-                                                                                
-                                                                                echo "option value";
-                                                                            ?>
+                                                                            
+                                                                           @foreach($ues as $all)
+                                                                           
+
+                                                                           <option>
+                                                                               {!!$all->appelation!!}
+                                                                        
+                                                                           </option>
+                                                                           @endforeach
+
                                                                             </optgroup>
+                                                                            
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -198,7 +210,14 @@
                                                                         <label style="font-weight: normal;">Semestre concerné</label>
                                                                         <select class="form-control" name="semester">
                                                                             <optgroup label="Semestre Concerné">
-                                                                            
+                                                                            @foreach($acad_sem as $all_acad_sems)
+                                                                           
+
+                                                                           <option>
+                                                                               {!!$$all_acad_sems->designation!!}
+                                                                        
+                                                                           </option>
+                                                                           @endforeach
                                                                             </optgroup>
                                                                         </select>
                                                                     </div>

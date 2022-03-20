@@ -4,7 +4,7 @@
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-            <title>Faire une demande de Réclamation</title>
+            <title>Faire une demande d'évaluation</title>
             <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
@@ -31,8 +31,8 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/dash_etu"><i class="fas fa-tachometer-alt"></i><span>Tableau de bord</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/faire_demande_reclamation"><i class="fas fa-inbox"></i><span>Faire une demande de réclamation</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/faire_demande_evaluation"><i class="fas fa-inbox"></i><span>Faire une demande d'évaluation</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/faire_demande_reclamation"><i class="fas fa-inbox"></i><span>Faire une demande de réclamation</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/faire_demande_evaluation"><i class="fas fa-inbox"></i><span>Faire une demande d'évaluation</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -148,43 +148,31 @@
                                             <div>
                                                 <div class="text-center p-5">
                                                     <div class="text-center">                   
-                                                    <form data-bs-hover-animate="pulse" method="post">
-                                                            <h2 class="text-center" data-aos="fade-down" data-aos-duration="600" data-aos-delay="400" style="font-size: 29px;"><strong>Demande de réclamation</strong></h2>
+                                                    <form data-bs-hover-animate="pulse" method="post" action="{{ route('plainte_created') }}">
+                                                            <h2 class="text-center" data-aos="fade-down" data-aos-duration="600" data-aos-delay="400" style="font-size: 29px;"><strong>Demande d'évaluation</strong></h2>
                                                     
                                                             <div class="form-group">
                                                                 <div class="form-row">
                                                                     <div class="col" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600">
                                                                         <label style="font-weight: normal;">Type d'évaluation</label>
-                                                                        <select class="form-control" name="evaluationType" required="required">
-                                                                        <optgroup label="Type d'évaluation">
-                                                                            @foreach($eva_type as $all_eva_types)
-                                                                           
-
-                                                                           <option>
-                                                                               {!!$all_eva_types->appelation!!}
-                                                                        
-                                                                           </option>
-                                                                           @endforeach
-
+                                                                        <select class="form-control" name="evaluationType">
+                                                                            <optgroup label="Type d'évaluation">
+                                                                                <?php
+                                                                                
+                                                                                    echo "option value";
+                                                                                ?>
                                                                             </optgroup>
                                                                         </select>
                                                                     </div>
-                                                                    <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600" V>
+                                                                    <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600">
                                                                         <label style="font-weight: normal;">UE concerné</label>
                                                                         <select class="form-control" name="ue">
                                                                             <optgroup label="UE Concerné">
-                                                                            
-                                                                           @foreach($ues as $all)
-                                                                           
-
-                                                                           <option>
-                                                                               {!!$all->appelation!!}
-                                                                        
-                                                                           </option>
-                                                                           @endforeach
-
+                                                                            <?php
+                                                                                
+                                                                                echo "option value";
+                                                                            ?>
                                                                             </optgroup>
-                                                                            
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -210,13 +198,7 @@
                                                                         <label style="font-weight: normal;">Semestre concerné</label>
                                                                         <select class="form-control" name="semester">
                                                                             <optgroup label="Semestre Concerné">
-                                                                            @foreach($acad_sem as $all_acad_sems)
-                                                                           
-                                                                           <option>
-                                                                               {!!$$all_acad_sems->designation!!}
-                                                                        
-                                                                           </option>
-                                                                           @endforeach
+                                                                            
                                                                             </optgroup>
                                                                         </select>
                                                                     </div>

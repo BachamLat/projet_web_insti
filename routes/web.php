@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('inscription');
-});
-Route::get('/connexion', function () {
     return view('connexion');
+});
+Route::get('/inscription', function () {
+    return view('inscription');
 });
 Route::get('/dash_etu', function () {
     return view('dashboard_etudiant');
@@ -43,9 +42,10 @@ Route::get('/faire_demande_evaluation', function () {
 Route::get('/faire_demande_reclamation', function () {
     return view('faire_demande_reclamation');
 });
-Route::get('/voir_details_demande_evaluation', function () {
-    return view('voir_details_demande_evaluation');
-});
+Route::get('/faire_demande_evaluation','App\Http\Controllers\EvaluationRequestController@show')->name('ues');
+Route::get('/faire_demande_reclamation','App\Http\Controllers\ComplaintRequestController@show');
+// Route::post('/faire_demande_reclamation','App\Http\Controllers\ComplaintController@create_demande')->name('plainte_created');
+// Route::get('/voir_details_demande_evaluation','App\Http\Controllers\ComplaintController@show')->name('plaint_vue');
 Route::get('/voir_details_demande_reclamation', function () {
     return view('voir_details_demande_reclamation');
 });
