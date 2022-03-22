@@ -16,7 +16,7 @@ class ComplaintRequestController extends Controller
         $ues = DB::select('select appelation from u_e_s');
         $eva_types = DB::select('select appelation from evaluation_types');
 
-        return view('faire_demande_evaluation'
+        return view('faire_demande_reclamation'
          ,compact('acad_sems','ues','eva_types')
         );
         
