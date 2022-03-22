@@ -36,14 +36,15 @@ Route::get('/profil_ens', function () {
 Route::get('/profil_pers', function () {
     return view('profil_personnel');
 });
-Route::get('/faire_demande_evaluation', function () {
+Route::get('/faire_demande_evaluation', 'App\Http\Controllers\EvaluationRequestController@show',function () {
     return view('faire_demande_evaluation');
 });
-Route::get('/faire_demande_reclamation', function () {
-    return view('faire_demande_reclamation');
-});
-Route::get('/faire_demande_evaluation','App\Http\Controllers\EvaluationRequestController@show')->name('ues');
-Route::get('/faire_demande_reclamation','App\Http\Controllers\ComplaintRequestController@show');
+// Route::get('/faire_demande_reclamation', function () {
+//     compact('acad_sem','ue','eva_type');
+//     return view('faire_demande_reclamation');
+// });
+// Route::get('/faire_demande_evaluation','App\Http\Controllers\EvaluationRequestController@show');
+// Route::get('/faire_demande_reclamation','App\Http\Controllers\ComplaintRequestController@show');
 // Route::post('/faire_demande_reclamation','App\Http\Controllers\ComplaintController@create_demande')->name('plainte_created');
 // Route::get('/voir_details_demande_evaluation','App\Http\Controllers\ComplaintController@show')->name('plaint_vue');
 Route::get('/voir_details_demande_reclamation', function () {

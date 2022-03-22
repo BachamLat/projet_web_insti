@@ -152,43 +152,75 @@
                                                             <h2 class="text-center" data-aos="fade-down" data-aos-duration="600" data-aos-delay="400" style="font-size: 29px;"><strong>Demande d'évaluation</strong></h2>
                                                     
                                                             <div class="form-group">
+
                                                                 <div class="form-row">
-                                                                    <div class="col" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600">
+
+                                                                <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600">
+                                                                        <label style="font-weight: normal;">Semestre concerné</label>
+                                                                        <select class="form-control" name="semester">
+                                                                            <optgroup >
+                                                                            @foreach($acad_sems as $a_sem)
+                                                                           
+
+                                                                           <option>
+                                                                               {!!$a_sem->designation!!}
+                                                                        
+                                                                           </option>
+                                                                           @endforeach
+                                                                                                    
+                                                                            </optgroup>                                                                       </optgroup>
+                                                                        </select>
+                                                                    </div>
+
+                                                                <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600" V>
+                                                                        <label style="font-weight: normal;">UE concerné</label>
+                                                                        <select class="form-control" name="ue">
+                                                                            <optgroup >
+                                                                            @foreach($ues as $an_ue)
+                                                                           
+
+                                                                           <option>
+                                                                               {!!$an_ue->appelation!!}
+                                                                        
+                                                                           </option>
+                                                                           @endforeach
+                                                                            </optgroup>
+                                                                            
+                                                                        </select>
+                                                                    </div>
+
+                                                                   
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="form-row">
+                                                                
+                                                                <div class="col" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600">
                                                                         <label style="font-weight: normal;">Type d'évaluation</label>
                                                                         <select class="form-control" name="evaluationType" required="required">
                                                                             <optgroup label="Type d'évaluation">
-                                                                            @foreach($eva_type as $all_eva_types)
+                                                                            @foreach($eva_types as $an_eva_type)
                                                                            
 
                                                                            <option>
-                                                                               {!!$all_eva_types->appelation!!}
+                                                                               {!!$an_eva_type->appelation!!}
                                                                         
                                                                            </option>
                                                                            @endforeach
-
                                                                             </optgroup>
                                                                         </select>
                                                                     </div>
-                                                                    <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600" V>
-                                                                        <label style="font-weight: normal;">UE concerné</label>
-                                                                        <select class="form-control" name="ue">
-                                                                            <optgroup label="UE Concerné">
-                                                                            
-                                                                           @foreach($ues as $all)
-                                                                           
-
-                                                                           <option>
-                                                                               {!!$all->appelation!!}
-                                                                        
-                                                                           </option>
-                                                                           @endforeach
-
-                                                                            </optgroup>
-                                                                            
-                                                                        </select>
+                                                                    
+                                                                    <div class="col">
+                                                                        <label style="font-weight: normal;"> Document preuve </label>
+                                                                        <input class="form-control" type="file" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600" name="paymentProof">   
                                                                     </div>
+                                                                
                                                                 </div>
                                                             </div>
+
 
                                                             <div class="form-group">
                                                                 <div class="form-row">
@@ -204,31 +236,7 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <div class="form-row">
-                                                                    <div class="col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600">
-                                                                        <label style="font-weight: normal;">Semestre concerné</label>
-                                                                        <select class="form-control" name="semester">
-                                                                            <optgroup label="Semestre Concerné">
-                                                                            @foreach($acad_sem as $all_acad_sems)
-                                                                           
-
-                                                                           <option>
-                                                                               {!!$$all_acad_sems->designation!!}
-                                                                        
-                                                                           </option>
-                                                                           @endforeach
-                                                                            </optgroup>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <label style="font-weight: normal;"> Document preuve </label>
-                                                                        <input class="form-control" type="file" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600" name="paymentProof">   
-                                                                    </div>
-                                                                
-                                                                </div>
-                                                            </div>
-
+                                                            
                                                             <div class="form-group">
                                                                 <button class="btn btn-primary btn-block" data-aos="fade-down" data-aos-duration="750" data-aos-delay="600" type="submit" name = "demande" style=" font-weight:bold;" >Envoyer</button>
                                                             </div>
