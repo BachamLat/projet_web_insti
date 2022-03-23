@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 
-class ComplaintRequestController extends Controller
+class MakeComplaintRequestController extends Controller
 {
       
     public function show()

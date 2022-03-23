@@ -36,19 +36,22 @@ Route::get('/profil_ens', function () {
 Route::get('/profil_pers', function () {
     return view('profil_personnel');
 });
-Route::get('/faire_demande_evaluation', 'App\Http\Controllers\EvaluationRequestController@show',function () {
+Route::get('/faire_demande_evaluation', 'App\Http\Controllers\MakeEvaluationRequestController@show',function () {
     return view('faire_demande_evaluation');
 });
- Route::get('/faire_demande_reclamation','App\Http\Controllers\ComplaintRequestController@show', function () {     return view('faire_demande_reclamation');
+ Route::get('/faire_demande_reclamation','App\Http\Controllers\MakeComplaintRequestController@show', function () {     
+     return view('faire_demande_reclamation');
  });
-Route::get('/voir_details_demande_evaluation','App\Http\Controllers\ComplaintController@show')->name('plaint_vue');
-Route::get('/voir_details_demande_reclamation','App\Http\Controllers\ComplaintRequestController@show', function () {
+Route::get('/voir_details_demande_evaluation','App\Http\Controllers\ShowAnEvaluationRequestController@show', function () {
+    return view('voir_details_demande_evaluation');
+});
+Route::get('/voir_details_demande_reclamation','App\Http\Controllers\ShowAComplaintRequestController@show', function () {
     return view('voir_details_demande_reclamation');
 });
-Route::get('/voir_liste_demandes_evaluation', function () {
+Route::get('/voir_liste_demandes_evaluation','App\Http\Controllers\ShowAllEvaluationRequestsController@show', function () {
     return view('voir_liste_demandes_evaluation');
 });
-Route::get('/voir_liste_demandes_reclamation', function () {
+Route::get('/voir_liste_demandes_reclamation', 'App\Http\Controllers\ShowAllComplaintRequestsController@show',function () {
     return view('voir_liste_demandes_reclamation');
 });
 

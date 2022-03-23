@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 
-class EvaluationRequestController extends Controller
+class MakeEvaluationRequestController extends Controller
 {
     public function show()
     {
